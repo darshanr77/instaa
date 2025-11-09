@@ -1,15 +1,12 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import { Montserrat } from "next/font/google";
 import "./globals.css";
+import LeftSidebar from "./components/LeftSidebar"; // ✅ Import your sidebar
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
+// ✅ Load Montserrat from Google Fonts
+const montserrat = Montserrat({
   subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+  variable: "--font-montserrat",
 });
 
 export const metadata: Metadata = {
@@ -25,9 +22,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${montserrat.variable} font-sans antialiased bg-black text-white`}
       >
-        {children}
+        <div className="flex flex-row w-full h-screen">
+          {/* Sidebar stays across all pages */}
+          <LeftSidebar />
+
+          {/* Main content area */}
+          <main className="flex-1 ml-[16.4%] bg-black overflow-y-auto">
+            {children}
+          </main>
+        </div>
       </body>
     </html>
   );

@@ -29,7 +29,7 @@ export default function RootLayout({
           <LeftSidebar />
 
           {/* Main content area */}
-          <main className="flex-1 ml-[16.4%] bg-black overflow-y-auto">
+          <main className="flex-1 ml-[5vw] group-hover:ml-[14vw] transition-all duration-300 bg-black overflow-y-auto">
             {children}
           </main>
         </div>

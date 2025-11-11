@@ -3,40 +3,46 @@ import React from "react";
 import { motion } from "framer-motion";
 
 export default function Loading() {
-  return (
-    <div className="fixed inset-0 flex flex-col items-center justify-center bg-black/80 backdrop-blur-3xl text-white">
-      {/* 🔄 Spinner + Text */}
-      <motion.div
-        className="flex flex-col items-center justify-center space-y-6"
-        initial={{ opacity: 0 }}
-        animate={{ opacity: 1 }}
-        transition={{ duration: 0.6 }}
-      >
-        {/* Spinner */}
-        <motion.div
-          className="w-16 h-16 border-4 border-white/30 border-t-white rounded-full"
-          animate={{ rotate: 360 }}
-          transition={{
-            repeat: Infinity,
-            ease: "linear",
-            duration: 1,
-          }}
-        />
+  const dots = Array.from({ length: 5 }); // Windows uses 5 visible dots
 
-        {/* Text */}
-        <motion.p
-          className="text-lg font-medium tracking-wide text-white/90"
-          animate={{ opacity: [0.5, 1, 0.5] }}
-          transition={{ repeat: Infinity, duration: 3 }}
-        >
-          Loading...
-        </motion.p>
-      </motion.div>
+  return (
+    <div className="fixed inset-0 flex flex-col items-center justify-center bg-black text-white overflow-hidden">
+      {/* Windows-style loading dots */}
+      <div className="relative w-28 h-28">
+        {dots.map((_, i) => (
+          <motion.span
+            key={i}
+            className="absolute top-1/2 left-1/2 block w-3 h-3 bg-white rounded-full"
+            style={{
+              transformOrigin: "0 -40px", // radius of orbit
+            }}
+            animate={{
+              rotate: [0, 360],
+            }}
+            transition={{
+              repeat: Infinity,
+              duration: 1.6,
+              ease: "linear",
+              delay: i * 0.12, // each dot slightly delayed
+            }}
+          />
+        ))}
+      </div>
+
+      {/* Text */}
+      <motion.p
+        className="mt-10 text-2xlfont-medium text-gray-300 tracking-wide"
+        animate={{ opacity: [0.5, 1, 0.5] }}
+        transition={{ repeat: Infinity, duration: 3 }}
+      >
+        Loading...
+      </motion.p>
 
       <style jsx global>{`
         html,
         body {
           overflow: hidden;
+          background: black;
         }
       `}</style>
     </div>

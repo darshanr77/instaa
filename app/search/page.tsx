@@ -3,7 +3,7 @@ import React from "react";
 
 async function Page() {
   // ⏳ Artificial delay (e.g., 3 seconds)
-  await new Promise((resolve) => setTimeout(resolve, 3000));
+  await new Promise((resolve) => setTimeout(resolve, 6000));
 
   return (
     <div className="w-full h-full flex flex-row overflow-y-hidden items-center justify-center text-white bg-black">

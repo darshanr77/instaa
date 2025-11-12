@@ -41,33 +41,20 @@ export default function LeftSidebar() {
 
   return (
     <div
-      className="group fixed top-0 left-0 h-screen flex flex-col bg-black text-white
+      className="group fixed top-0 left-0 h-screen flex flex-col bg-black 
                  border-r border-gray-800 px-2 py-6 w-[5vw] hover:w-[14vw]
                  transition-all duration-300 overflow-hidden z-50"
     >
       {/* ✅ Instagram Logo */}
-      <div className="flex items-center justify-center mb-8">
-        <Link
-          href="/"
-          className="flex items-center gap-3 px-3 py-2 rounded-lg transition-all duration-300 hover:bg-gray-900"
-        >
-          {/* Logo should ALWAYS show */}
-          <BsInstagram size={26} className="text-white flex-shrink-0" />
-          
-          {/* Text only on hover */}
-          <span
-            className="text-lg font-semibold tracking-wide whitespace-nowrap
-                       opacity-0 translate-x-[-10px]
-                       group-hover:opacity-100 group-hover:translate-x-0
-                       transition-all duration-300"
-          >
-            Instagram
-          </span>
-        </Link>
-      </div>
+      <div className="flex items-center justify-start mb-8 ml-4">
+  <Link href="/" className="flex items-center">
+    <BsInstagram size={26} className="text-gray-300 hover:text-white" />
+  </Link>
+</div>
+
 
       {/* ✅ Navigation Links */}
-      <nav className="flex flex-col gap-2">
+      <nav className="flex flex-col gap-[9px]">
         {links.map(({ href, icon, active, label }) => {
           const isActive = pathname === href;
           const Icon = isActive && active ? active : icon;
@@ -79,8 +66,8 @@ export default function LeftSidebar() {
               className={`flex items-center gap-4 py-2 pl-3 rounded-lg transition-all duration-200
                 ${
                   isActive
-                    ? "text-white bg-gray-800"
-                    : "text-gray-400 hover:text-white hover:bg-gray-900"
+                    ? "text-white bg-[#2a2e2e]"
+                    : "text-gray-400 hover:text-white hover:bg-[#2a2e2e]"
                 }`}
             >
               <span className="text-2xl min-w-[32px] flex justify-center">{Icon}</span>

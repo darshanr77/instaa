@@ -31,7 +31,7 @@ export default function Loading() {
 
       {/* Text */}
       <motion.p
-        className="mt-10 text-2xlfont-medium text-gray-300 tracking-wide"
+        className="mt-10 text-2xl font-medium text-gray-300 tracking-wide"
         animate={{ opacity: [0.5, 1, 0.5] }}
         transition={{ repeat: Infinity, duration: 3 }}
       >

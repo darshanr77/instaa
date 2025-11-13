@@ -138,12 +138,12 @@ export default function Page() {
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
               {/* Show play icon when paused */}
               {!playing && (
-                <FaPlay className="text-white text-6xl opacity-90 transition-opacity duration-300" />
+                <FaPlay className="text-white text-6xl opacity-90 cursor-pointer transition-opacity duration-300" />
               )}
 
               {/* Show pause icon briefly when playing */}
               {playing && showPause && (
-                <FaPause className="text-white text-6xl opacity-90 transition-opacity duration-300" />
+                <FaPause className="text-white text-6xl opacity-90 cursor-pointer transition-opacity duration-300" />
               )}
             </div>
 

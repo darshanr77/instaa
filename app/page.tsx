@@ -1,6 +1,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
-import Home from "./components/Home";
+import Home from "./components/Home.jsx";
 import Loading from "./loading"; // reuse your loader
 
 export default function Page() {

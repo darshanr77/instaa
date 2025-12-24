@@ -71,19 +71,11 @@ export default function LeftSidebar() {
       {/* ✅ EXTERNAL LINK – Program 6 */}
       <div className="flex items-center justify-start mb-8 ml-4">
         <a
-          href="https://vtucircle.com/bcsl504-program-6/"
-          target="_blank"
+          href="/"
           rel="noopener noreferrer"
           className="flex items-center gap-4 text-gray-300 hover:text-white transition-colors"
         >
           <BsInstagram size={26} />
-          <span
-            className="opacity-0 translate-x-[-10px]
-                       group-hover:opacity-100 group-hover:translate-x-0
-                       transition-all duration-300 text-sm font-medium whitespace-nowrap"
-          >
-            6th Program
-          </span>
         </a>
       </div>
 
@@ -122,3 +114,4 @@ export default function LeftSidebar() {
     </div>
   );
 }
+
